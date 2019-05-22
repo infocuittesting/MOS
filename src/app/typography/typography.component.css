@@ -1,6 +1,6 @@
 .tableBodyScroll tbody {
     display:block;
-    height:380px;
+    height:390px;
     overflow:auto;
   }
   .tableBodyScroll thead, tr {
