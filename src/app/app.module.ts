@@ -39,11 +39,6 @@ import { ProfileComponent } from './profile/profile.component';
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-    TarveldeskComponent,
-    LaundryComponent,
-    MaintenanceComponent,
-    ReservationComponent,
-    ProfileComponent,
 
   ],
   providers: [],
