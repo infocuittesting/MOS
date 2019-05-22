@@ -58,6 +58,6 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'foodandbeverage',     component: TypographyComponent },
     { path: 'icons',          component: IconsComponent },
     { path: 'maps',           component: MapsComponent },
-    { path: 'notifications',  component: NotificationsComponent },
+    { path: 'frontdesk',  component: NotificationsComponent },
     { path: 'upgrade',        component: UpgradeComponent },
 ];
