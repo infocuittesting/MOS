@@ -11,7 +11,11 @@ import { IconsComponent } from '../../icons/icons.component';
 import { MapsComponent } from '../../maps/maps.component';
 import { NotificationsComponent } from '../../notifications/notifications.component';
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
-
+import { TarveldeskComponent } from '../../tarveldesk/tarveldesk.component';
+import { LaundryComponent } from '../../laundry/laundry.component';
+import { MaintenanceComponent } from '../../maintenance/maintenance.component';
+import { ReservationComponent } from '../../reservation/reservation.component';
+import { ProfileComponent } from '../../profile/profile.component';
 import {
   MatButtonModule,
   MatInputModule,
@@ -41,6 +45,11 @@ import {
     MapsComponent,
     NotificationsComponent,
     UpgradeComponent,
+    TarveldeskComponent,
+    LaundryComponent,
+    MaintenanceComponent,
+    ReservationComponent,
+    ProfileComponent
   ]
 })
 
