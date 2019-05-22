@@ -64,9 +64,9 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'maps',           component: MapsComponent },
     { path: 'notifications',  component: NotificationsComponent },
     { path: 'upgrade',        component: UpgradeComponent },
-    {path: 'traveldesk',component:TarveldeskComponent},
-    {path: 'laundry',component:LaundryComponent},
-    {path: 'maintenance',component:MaintenanceComponent},
-    {path: 'reservation',component:ReservationComponent},
-    {path: 'profile',component:ProfileComponent}
+    { path: 'traveldesk',component:TarveldeskComponent },
+    { path: 'laundry',component:LaundryComponent },
+    { path: 'maintenance',component:MaintenanceComponent },
+    { path: 'reservation',component:ReservationComponent },
+    { path: 'profile',component:ProfileComponent }
 ];
