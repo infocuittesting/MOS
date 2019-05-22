@@ -18,10 +18,13 @@ import { IconsComponent } from './icons/icons.component';
 import { MapsComponent } from './maps/maps.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 import { UpgradeComponent } from './upgrade/upgrade.component';
-import {
-  AgmCoreModule
-} from '@agm/core';
+
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { TarveldeskComponent } from './tarveldesk/tarveldesk.component';
+import { LaundryComponent } from './laundry/laundry.component';
+import { MaintenanceComponent } from './maintenance/maintenance.component';
+import { ReservationComponent } from './reservation/reservation.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   imports: [
@@ -31,13 +34,16 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
     ComponentsModule,
     RouterModule,
     AppRoutingModule,
-    AgmCoreModule.forRoot({
-      apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
-    })
+  
   ],
   declarations: [
     AppComponent,
     AdminLayoutComponent,
+    TarveldeskComponent,
+    LaundryComponent,
+    MaintenanceComponent,
+    ReservationComponent,
+    ProfileComponent,
 
   ],
   providers: [],

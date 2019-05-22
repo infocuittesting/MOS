@@ -1,0 +1,14 @@
+    .tableBodyScroll tbody {
+        display:block;
+        height:380px;
+        overflow:auto;
+      }
+      .tableBodyScroll thead, tr {
+        display:table;
+        width:100%;
+        table-layout:fixed;
+        word-wrap: normal;
+      }
+      .tableBodyScroll thead {
+        width: calc( 100% - 1em )
+      }

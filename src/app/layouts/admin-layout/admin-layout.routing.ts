@@ -8,7 +8,11 @@ import { IconsComponent } from '../../icons/icons.component';
 import { MapsComponent } from '../../maps/maps.component';
 import { NotificationsComponent } from '../../notifications/notifications.component';
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
-
+import { TarveldeskComponent } from '../../tarveldesk/tarveldesk.component';
+import { LaundryComponent } from '../../laundry/laundry.component';
+import { MaintenanceComponent } from '../../maintenance/maintenance.component';
+import { ReservationComponent } from '../../reservation/reservation.component';
+import { ProfileComponent } from '../../profile/profile.component';
 export const AdminLayoutRoutes: Routes = [
     // {
     //   path: '',
@@ -60,4 +64,9 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'maps',           component: MapsComponent },
     { path: 'notifications',  component: NotificationsComponent },
     { path: 'upgrade',        component: UpgradeComponent },
+    {path: 'traveldesk',component:TarveldeskComponent},
+    {path: 'laundry',component:LaundryComponent},
+    {path: 'maintenance',component:MaintenanceComponent},
+    {path: 'reservation',component:ReservationComponent},
+    {path: 'profile',component:ProfileComponent}
 ];
