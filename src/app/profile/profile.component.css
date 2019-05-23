@@ -8,6 +8,7 @@
     display:block;
     height:320px;
     overflow:auto;
+    word-wrap: normal;
   }
   .tableBodyScroll thead, tr {
     display:table;
