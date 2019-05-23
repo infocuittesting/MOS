@@ -1,3 +1,272 @@
-<p>
-  reservation works!
-</p>
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 pointer">
+        <div class="card">
+          <div class="card-header card-header-warning">
+            <h4 class="card-title">Reservation</h4>
+          </div>
+          <div class="card-body">
+
+            <ul class="nav nav-pills" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" data-toggle="pill" href="#createreservation">Create Reservation</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="pill" href="#resdetail">Reservation Details</a>
+              </li>
+            </ul>
+            <div class="tab-content">
+              <div id="createreservation" class="container tab-pane active testborder">
+                <br>
+                <form action="">
+                  <div class="row">
+                    <div class="col-md-3">
+                      <div class="form-group">
+                        <input type="text" placeholder="Enter the Name" name="name" id="" class="form-control">
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="form-group">
+                        <input type="text" placeholder="Enter Mobile Number" name="name" id="" class="form-control">
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="form-group">
+                        <input type="text" placeholder="Enter No of Adults" name="name" id="" class="form-control">
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="form-group">
+                        <input type="text" placeholder="Enter No Of Child" name="name" id="" class="form-control">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-3">
+                      <div class="form-group">
+                        <input type="text" placeholder="Enter Address" name="name" id="" class="form-control">
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="form-group">
+                        <input type="text" onfocus="(this.type='date')" onblur="(this.type='text')"
+                          placeholder="Enter Checkin Date" name="name" id="" class="form-control">
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="form-group">
+                        <input type="text" onfocus="(this.type='date')" onblur="(this.type='text')"
+                          placeholder="Enter CheckOut Date" name="name" id="" class="form-control">
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="form-group">
+                        <select placeholder="Enter Room No" name="name" id="" class="form-control">
+                          <option value="" disabled selected>Select</option>
+                          <option value="">100</option>
+                          <option value="">101</option>
+                          <option value="">102</option>
+                          <option value="">103</option>
+                          <option value="">104</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-5"></div>
+                    <div class="col-2">
+                      <button class="btn btn-info">
+                        Submit
+                      </button>
+                    </div>
+                    <div class="col-5"></div>
+                  </div>
+                  <br>
+                </form>
+              </div>
+              <div id="resdetail" class="container tab-pane testborder">
+                <br>
+                <div class="row">
+                  <div class="col-md-12">
+                    <table class="table table-hover table-bordered table-striped tableBodyScroll">
+                      <thead class="text-primary">
+                        <tr>
+                          <th width="50px">SI.No</th>
+                          <th>Name</th>
+                          <th>Checkin&nbsp;Date</th>
+                          <th>CheckOut&nbsp;Date</th>
+                          <th>Room&nbsp;No</th>
+                          <th>Adults</th>
+                          <th>Child</th>
+                          <th>Total Bill</th>
+                          <th>Edit</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td width="50px">1</td>
+                          <td>Siva</td>
+                          <td>10/05/2019</td>
+                          <td>20/05/2019</td>
+                          <td>100</td>
+                          <td>2</td>
+                          <td>3</td>
+                          <td> 450</td>
+                          <td><i class="fa fa-pencil-square-o"></i></td>
+                        </tr>
+                        <tr>
+                          <td width="50px">1</td>
+                          <td>Siva</td>
+                          <td>10/05/2019</td>
+                          <td>20/05/2019</td>
+                          <td>100</td>
+                          <td>2</td>
+                          <td>3</td>
+                          <td> 450</td>
+                          <td><i class="fa fa-pencil-square-o"></i></td>
+                        </tr>
+                        <tr>
+                          <td width="50px">1</td>
+                          <td>Siva</td>
+                          <td>10/05/2019</td>
+                          <td>20/05/2019</td>
+                          <td>100</td>
+                          <td>2</td>
+                          <td>3</td>
+                          <td> 450</td>
+                          <td><i class="fa fa-pencil-square-o"></i></td>
+                        </tr>
+                        <tr>
+                          <td width="50px">1</td>
+                          <td>Siva</td>
+                          <td>10/05/2019</td>
+                          <td>20/05/2019</td>
+                          <td>100</td>
+                          <td>2</td>
+                          <td>3</td>
+                          <td> 450</td>
+                          <td><i class="fa fa-pencil-square-o"></i></td>
+                        </tr>
+                        <tr>
+                          <td width="50px">1</td>
+                          <td>Siva</td>
+                          <td>10/05/2019</td>
+                          <td>20/05/2019</td>
+                          <td>100</td>
+                          <td>2</td>
+                          <td>3</td>
+                          <td> 450</td>
+                          <td><i class="fa fa-pencil-square-o"></i></td>
+                        </tr>
+                        <tr>
+                          <td width="50px">1</td>
+                          <td>Siva</td>
+                          <td>10/05/2019</td>
+                          <td>20/05/2019</td>
+                          <td>100</td>
+                          <td>2</td>
+                          <td>3</td>
+                          <td> 450</td>
+                          <td><i class="fa fa-pencil-square-o"></i></td>
+                        </tr>
+                        <tr>
+                          <td width="50px">1</td>
+                          <td>Siva</td>
+                          <td>10/05/2019</td>
+                          <td>20/05/2019</td>
+                          <td>100</td>
+                          <td>2</td>
+                          <td>3</td>
+                          <td> 450</td>
+                          <td><i class="fa fa-pencil-square-o"></i></td>
+                        </tr>
+                        <tr>
+                          <td width="50px">1</td>
+                          <td>Siva</td>
+                          <td>10/05/2019</td>
+                          <td>20/05/2019</td>
+                          <td>100</td>
+                          <td>2</td>
+                          <td>3</td>
+                          <td> 450</td>
+                          <td><i class="fa fa-pencil-square-o"></i></td>
+                        </tr>
+                        <tr>
+                          <td width="50px">1</td>
+                          <td>Siva</td>
+                          <td>10/05/2019</td>
+                          <td>20/05/2019</td>
+                          <td>100</td>
+                          <td>2</td>
+                          <td>3</td>
+                          <td> 450</td>
+                          <td><i class="fa fa-pencil-square-o"></i></td>
+                        </tr>
+                        <tr>
+                          <td width="50px">1</td>
+                          <td>Siva</td>
+                          <td>10/05/2019</td>
+                          <td>20/05/2019</td>
+                          <td>100</td>
+                          <td>2</td>
+                          <td>3</td>
+                          <td> 450</td>
+                          <td><i class="fa fa-pencil-square-o"></i></td>
+                        </tr>
+                        <tr>
+                          <td width="50px">1</td>
+                          <td>Siva</td>
+                          <td>10/05/2019</td>
+                          <td>20/05/2019</td>
+                          <td>100</td>
+                          <td>2</td>
+                          <td>3</td>
+                          <td> 450</td>
+                          <td><i class="fa fa-pencil-square-o"></i></td>
+                        </tr>
+                        <tr>
+                          <td width="50px">1</td>
+                          <td>Siva</td>
+                          <td>10/05/2019</td>
+                          <td>20/05/2019</td>
+                          <td>100</td>
+                          <td>2</td>
+                          <td>3</td>
+                          <td> 450</td>
+                          <td><i class="fa fa-pencil-square-o"></i></td>
+                        </tr>
+                        <tr>
+                          <td width="50px">1</td>
+                          <td>Siva</td>
+                          <td>10/05/2019</td>
+                          <td>20/05/2019</td>
+                          <td>100</td>
+                          <td>2</td>
+                          <td>3</td>
+                          <td> 450</td>
+                          <td><i class="fa fa-pencil-square-o"></i></td>
+                        </tr>
+                        <tr>
+                          <td width="50px">1</td>
+                          <td>Siva</td>
+                          <td>10/05/2019</td>
+                          <td>20/05/2019</td>
+                          <td>100</td>
+                          <td>2</td>
+                          <td>3</td>
+                          <td> 450</td>
+                          <td><i class="fa fa-pencil-square-o"></i></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

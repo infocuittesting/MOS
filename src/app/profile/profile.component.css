@@ -1,0 +1,29 @@
+.testborder{
+    border: solid 1px lightgrey;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(156, 39, 176, 0.4);
+    background-color: #fafafa;
+}
+.tableBodyScroll tbody {
+    display:block;
+    height:320px;
+    overflow:auto;
+  }
+  .tableBodyScroll thead, tr {
+    display:table;
+    width:100%;
+    table-layout:fixed;
+    word-wrap: normal;
+  }
+  .tableBodyScroll thead {
+    width: calc( 100% - 1em )
+  }
+
+  .nav-pills .nav-link {
+    color: #fff;
+    background-color: #abb3b9;
+}
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #f32f21;
+}
