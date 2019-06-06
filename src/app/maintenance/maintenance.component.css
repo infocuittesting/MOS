@@ -1,14 +1,62 @@
 .tableBodyScroll tbody {
-    display:block;
-    height:380px;
-    overflow:auto;
-  }
-  .tableBodyScroll thead, tr {
-    display:table;
-    width:100%;
-    table-layout:fixed;
-    word-wrap: normal;
-  }
-  .tableBodyScroll thead {
-    width: calc( 100% - 1em )
-  }
+  display:block;
+  height:380px;
+  overflow:auto;
+}
+.tableBodyScroll thead, tr {
+  display:table;
+  width:100%;
+  table-layout:fixed;
+  word-wrap: normal;
+}
+.tableBodyScroll thead {
+  width: calc( 100% - 1em )
+}
+
+.tableBodyScroll tbody {
+  display:block;
+  height:380px;
+  overflow:auto;
+}
+.tableBodyScroll thead, tr {
+  display:table;
+  width:100%;
+  table-layout:fixed;
+  word-wrap: normal;
+}
+.tableBodyScroll thead {
+  width: calc( 100% - 1em )
+}
+.backcolor{
+  background-color: lightgrey;
+    color:white;
+    cursor: pointer;
+  
+}
+#a{
+  color:white;
+margin: 10px;
+cursor: pointer;
+}
+.backcolorone{
+  margin-top: 2px;
+  background-color: lightblue;
+    color:white;
+    cursor: pointer;
+  
+}
+#aone{
+  color:black;
+margin: 10px;
+cursor: pointer;
+}
+
+.switch-small[_ngcontent-c6] {
+  width: 50px !important;
+  height: 20px !important;
+  border-radius: 20px;
+}
+
+.switch-small.checked[_ngcontent-c6] small[_ngcontent-c6] {
+  left: 30px !important;
+}

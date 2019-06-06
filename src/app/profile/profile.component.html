@@ -19,26 +19,30 @@
             <div class="tab-content">
               <div id="createprofile" class="container tab-pane active testborder">
                 <br>
-                <form action="">
+                <form id="" #myformm="ngForm">
                   <div class="row">
                     <div class="col-md-3">
                       <div class="form-group">
-                        <input type="text" placeholder="Enter the Name" name="name" id="" class="form-control">
+                        <input type="text" placeholder="Enter the Name" name="name" id="" class="form-control"
+                          [(ngModel)]="profile.name">
                       </div>
                     </div>
                     <div class="col-md-3">
                       <div class="form-group">
-                        <input type="text" placeholder="Enter Mobile Number" name="name" id="" class="form-control">
+                        <input type="text" placeholder="Enter Mobile Number" name="mobile" id="" class="form-control"
+                          [(ngModel)]="profile.mobile">
                       </div>
                     </div>
                     <div class="col-md-3">
                       <div class="form-group">
-                        <input type="text" placeholder="Enter Address" name="name" id="" class="form-control">
+                        <input type="text" placeholder="Enter Address" name="address" id="" class="form-control"
+                          [(ngModel)]="profile.address">
                       </div>
                     </div>
                     <div class="col-md-3">
                       <div class="form-group">
-                        <input type="email" placeholder="Enter Email id" name="name" id="" class="form-control">
+                        <input type="email" placeholder="Enter Email id" name="email" id="" class="form-control"
+                          [(ngModel)]="profile.email">
                       </div>
                     </div>
                   </div>
@@ -46,7 +50,8 @@
                   <div class="row">
                     <div class="col-5"></div>
                     <div class="col-2">
-                      <button class="btn btn-info">
+                      <button type="reset" class="btn btn-info form-group" (click)='profile_insert(profile)'
+                        [disabled]="!myformm.valid">
                         Submit
                       </button>
                     </div>
@@ -71,117 +76,15 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <td width="50px">1</td>
-                          <td>Siva</td>
-                          <td>9009009009</td>
-                          <td>Chrompet,Chennai</td>
-                          <td>siva@gmail.com</td>
-                          <td><i class="fa fa-pencil-square-o"></i></td>
-                        </tr>
-                        <tr>
-                          <td width="50px">2</td>
-                          <td>Siva</td>
-                          <td>9009009009</td>
-                          <td>Chrompet,Chennai</td>
-                          <td>siva@gmail.com</td>
-                          <td><i class="fa fa-pencil-square-o"></i></td>
-                        </tr>
-                        <tr>
-                          <td width="50px">3</td>
-                          <td>Siva</td>
-                          <td>9009009009</td>
-                          <td>Chrompet,Chennai</td>
-                          <td>siva@gmail.com</td>
-                          <td><i class="fa fa-pencil-square-o"></i></td>
-                        </tr>
-                        <tr>
-                          <td width="50px">4</td>
-                          <td>Siva</td>
-                          <td>9009009009</td>
-                          <td>Chrompet,Chennai</td>
-                          <td>siva@gmail.com</td>
-                          <td><i class="fa fa-pencil-square-o"></i></td>
-                        </tr>
-                        <tr>
-                          <td width="50px">5</td>
-                          <td>Siva</td>
-                          <td>9009009009</td>
-                          <td>Chrompet,Chennai</td>
-                          <td>siva@gmail.com</td>
-                          <td><i class="fa fa-pencil-square-o"></i></td>
-                        </tr>
-                        <tr>
-                          <td width="50px">6</td>
-                          <td>Siva</td>
-                          <td>9009009009</td>
-                          <td>Chrompet,Chennai</td>
-                          <td>siva@gmail.com</td>
-                          <td><i class="fa fa-pencil-square-o"></i></td>
-                        </tr>
-                        <tr>
-                          <td width="50px">7</td>
-                          <td>Siva</td>
-                          <td>9009009009</td>
-                          <td>Chrompet,Chennai</td>
-                          <td>siva@gmail.com</td>
-                          <td><i class="fa fa-pencil-square-o"></i></td>
-                        </tr>
-                        <tr>
-                          <td width="50px">8</td>
-                          <td>Siva</td>
-                          <td>9009009009</td>
-                          <td>Chrompet,Chennai</td>
-                          <td>siva@gmail.com</td>
-                          <td><i class="fa fa-pencil-square-o"></i></td>
-                        </tr>
-                        <tr>
-                          <td width="50px">9</td>
-                          <td>Siva</td>
-                          <td>9009009009</td>
-                          <td>Chrompet,Chennai</td>
-                          <td>siva@gmail.com</td>
-                          <td><i class="fa fa-pencil-square-o"></i></td>
-                        </tr>
-                        <tr>
-                          <td width="50px">10</td>
-                          <td>Siva</td>
-                          <td>9009009009</td>
-                          <td>Chrompet,Chennai</td>
-                          <td>siva@gmail.com</td>
-                          <td><i class="fa fa-pencil-square-o"></i></td>
-                        </tr>
-                        <tr>
-                          <td width="50px">11</td>
-                          <td>Siva</td>
-                          <td>9009009009</td>
-                          <td>Chrompet,Chennai</td>
-                          <td>siva@gmail.com</td>
-                          <td><i class="fa fa-pencil-square-o"></i></td>
-                        </tr>
-                        <tr>
-                          <td width="50px">12</td>
-                          <td>Siva</td>
-                          <td>9009009009</td>
-                          <td>Chrompet,Chennai</td>
-                          <td>siva@gmail.com</td>
-                          <td><i class="fa fa-pencil-square-o"></i></td>
-                        </tr>
-                        <tr>
-                          <td width="50px">13</td>
-                          <td>Siva</td>
-                          <td>9009009009</td>
-                          <td>Chrompet,Chennai</td>
-                          <td>siva@gmail.com</td>
-                          <td><i class="fa fa-pencil-square-o"></i></td>
-                        </tr>
-                        <tr>
-                          <td width="50px">14</td>
-                          <td>Siva</td>
-                          <td>9009009009</td>
-                          <td>Chrompet,Chennai</td>
-                          <td>siva@gmail.com</td>
-                          <td><i class="fa fa-pencil-square-o"></i></td>
+                        <tr *ngFor='let select_param of profile_select_param;let i =index '>
+                          <td width="50px">{{i+1}}</td>
+                          <td>{{select_param.guest_name}}</td>
+                          <td>{{select_param.mobile}}</td>
+                          <td>{{select_param.address}}</td>
+                          <td>{{select_param.email}}</td>
+                          <td><i class="fa fa-pencil-square-o" data-toggle="modal" data-target="#myModal"
+                              (click)="profile_edit(select_param)"></i></td>
+
                         </tr>
                       </tbody>
                     </table>
@@ -193,5 +96,65 @@
         </div>
       </div>
     </div>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-lg">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="card-header card-header-info">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Update Profile</h4>
+      </div>
+      <div class="modal-body">
+        <form id="" #myformm="ngForm">
+          <div class="row">
+            <div class="col-md-3">
+              <div class="form-group">
+                <input type="text" placeholder="Enter the Name" name="name" id="" class="form-control"
+                  [(ngModel)]="profile_edit_value.name">
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <input type="text" placeholder="Enter Mobile Number" name="mobile" id="" class="form-control"
+                  [(ngModel)]="profile_edit_value.mobile">
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <input type="text" placeholder="Enter Address" name="address" id="" class="form-control"
+                  [(ngModel)]="profile_edit_value.address">
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <input type="email" placeholder="Enter Email id" name="email" id="" class="form-control"
+                  [(ngModel)]="profile_edit_value.email">
+              </div>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-5"></div>
+            <div class="col-2">
+              <button type="reset" class="btn btn-info form-group" (click)='profile_update(profile_edit_value)' [disabled]="!myformm.valid">
+                Submit
+              </button>
+            </div>
+            <div class="col-5"></div>
+          </div>
+          <br>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
   </div>
 </div>

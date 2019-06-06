@@ -16,6 +16,7 @@ import { LaundryComponent } from '../../laundry/laundry.component';
 import { MaintenanceComponent } from '../../maintenance/maintenance.component';
 import { ReservationComponent } from '../../reservation/reservation.component';
 import { ProfileComponent } from '../../profile/profile.component';
+import { UiSwitchModule } from 'ngx-toggle-switch'
 import {
   MatButtonModule,
   MatInputModule,
@@ -35,6 +36,7 @@ import {
     MatInputModule,
     MatSelectModule,
     MatTooltipModule,
+    UiSwitchModule,
   ],
   declarations: [
     DashboardComponent,
@@ -53,4 +55,4 @@ import {
   ]
 })
 
-export class AdminLayoutModule {}
+export class AdminLayoutModule { }

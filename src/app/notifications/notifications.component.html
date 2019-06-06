@@ -18,8 +18,9 @@
                 </form>
             </div>
             <div class="card-body" id="accordian">
-                <div class="row backcolor" role="button" data-toggle="collapse"  href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">                  
-                        <a style="float:left" id="a" >Over all Tickets</a>                  
+                <div class="row backcolor" role="button" data-toggle="collapse" href="#collapseOne" aria-expanded="true"
+                    aria-controls="collapseOne">
+                    <a style="float:left" id="a">Over all Tickets</a>
                 </div>
                 <div class="row collapse show" id="collapseOne" role="tabpanel" data-parent="#accordian">
                     <table class="table table-bordered table-striped table-hover tableBodyScroll">
@@ -31,159 +32,32 @@
                                 <th>Request Details</th>
                                 <th>Request Time</th>
                                 <th>Request Status</th>
+                                <th>Edit</th>
                             </tr>
 
                         </thead>
                         <tbody>
-                            <tr>
+                            <tr *ngFor='let frontdesk of frontdesk_array_open'>
+                                <td>{{frontdesk.room_no}}</td>
+                                <td>{{frontdesk.fditem_id}}</td>
+                                <td>{{frontdesk.fdcategory_name}}</td>
+                                <td>{{frontdesk.fditem_names}}</td>
+                                <td>{{frontdesk.request_time}}</td>
+                                <td>{{frontdesk.ticketstatus}}</td>
                                 <td>
-                                    100
+                                    <ui-switch size="small" [checked]="true" (change)="select(frontdesk)"></ui-switch>
                                 </td>
-                                <td>Ram</td>
-                                <td>House Keeping</td>
-                                <td>Clean Room</td>
-                                <td>2019-03-11 17:58:08</td>
-                                <td>Completed</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    100
-                                </td>
-                                <td>Ram</td>
-                                <td>House Keeping</td>
-                                <td>Clean Room</td>
-                                <td>2019-03-11 17:58:08</td>
-                                <td>Completed</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    100
-                                </td>
-                                <td>Ram</td>
-                                <td>House Keeping</td>
-                                <td>Clean Room</td>
-                                <td>2019-03-11 17:58:08</td>
-                                <td>Completed</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    100
-                                </td>
-                                <td>Ram</td>
-                                <td>House Keeping</td>
-                                <td>Clean Room</td>
-                                <td>2019-03-11 17:58:08</td>
-                                <td>Completed</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    100
-                                </td>
-                                <td>Ram</td>
-                                <td>House Keeping</td>
-                                <td>Clean Room</td>
-                                <td>2019-03-11 17:58:08</td>
-                                <td>Completed</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    100
-                                </td>
-                                <td>Ram</td>
-                                <td>House Keeping</td>
-                                <td>Clean Room</td>
-                                <td>2019-03-11 17:58:08</td>
-                                <td>Completed</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    100
-                                </td>
-                                <td>Ram</td>
-                                <td>House Keeping</td>
-                                <td>Clean Room</td>
-                                <td>2019-03-11 17:58:08</td>
-                                <td>Completed</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    100
-                                </td>
-                                <td>Ram</td>
-                                <td>House Keeping</td>
-                                <td>Clean Room</td>
-                                <td>2019-03-11 17:58:08</td>
-                                <td>Completed</td>
                             </tr>
 
-                            <tr>
-                                <td>
-                                    100
-                                </td>
-                                <td>Ram</td>
-                                <td>House Keeping</td>
-                                <td>Clean Room</td>
-                                <td>2019-03-11 17:58:08</td>
-                                <td>Completed</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    100
-                                </td>
-                                <td>Ram</td>
-                                <td>House Keeping</td>
-                                <td>Clean Room</td>
-                                <td>2019-03-11 17:58:08</td>
-                                <td>Completed</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    100
-                                </td>
-                                <td>Ram</td>
-                                <td>House Keeping</td>
-                                <td>Clean Room</td>
-                                <td>2019-03-11 17:58:08</td>
-                                <td>Completed</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    100
-                                </td>
-                                <td>Ram</td>
-                                <td>House Keeping</td>
-                                <td>Clean Room</td>
-                                <td>2019-03-11 17:58:08</td>
-                                <td>Completed</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    100
-                                </td>
-                                <td>Ram</td>
-                                <td>House Keeping</td>
-                                <td>Clean Room</td>
-                                <td>2019-03-11 17:58:08</td>
-                                <td>Completed</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    100
-                                </td>
-                                <td>Ram</td>
-                                <td>House Keeping</td>
-                                <td>Clean Room</td>
-                                <td>2019-03-11 17:58:08</td>
-                                <td>Completed</td>
-                            </tr>
 
                         </tbody>
                     </table>
                 </div>
-                <div class="row backcolorone" role="button" data-toggle="collapse"  href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                  
-                        <a style="float:left" id="aone">Closed Tickets</a>
-                  
+                <div class="row backcolorone" role="button" data-toggle="collapse" href="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+
+                    <a style="float:left" id="aone">Closed Tickets</a>
+
                 </div>
                 <div class="row collapse " id="collapseTwo" role="tabpanel" data-parent="#accordian">
                     <table class="table table-bordered table-striped table-hover tableBodyScroll">
@@ -199,146 +73,14 @@
 
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>
-                                    100
-                                </td>
-                                <td>Ram</td>
-                                <td>House Keeping</td>
-                                <td>Clean Room</td>
-                                <td>2019-03-11 17:58:08</td>
-                                <td>Completed</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    100
-                                </td>
-                                <td>Ram</td>
-                                <td>House Keeping</td>
-                                <td>Clean Room</td>
-                                <td>2019-03-11 17:58:08</td>
-                                <td>Completed</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    100
-                                </td>
-                                <td>Ram</td>
-                                <td>House Keeping</td>
-                                <td>Clean Room</td>
-                                <td>2019-03-11 17:58:08</td>
-                                <td>Completed</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    100
-                                </td>
-                                <td>Ram</td>
-                                <td>House Keeping</td>
-                                <td>Clean Room</td>
-                                <td>2019-03-11 17:58:08</td>
-                                <td>Completed</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    100
-                                </td>
-                                <td>Ram</td>
-                                <td>House Keeping</td>
-                                <td>Clean Room</td>
-                                <td>2019-03-11 17:58:08</td>
-                                <td>Completed</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    100
-                                </td>
-                                <td>Ram</td>
-                                <td>House Keeping</td>
-                                <td>Clean Room</td>
-                                <td>2019-03-11 17:58:08</td>
-                                <td>Completed</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    100
-                                </td>
-                                <td>Ram</td>
-                                <td>House Keeping</td>
-                                <td>Clean Room</td>
-                                <td>2019-03-11 17:58:08</td>
-                                <td>Completed</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    100
-                                </td>
-                                <td>Ram</td>
-                                <td>House Keeping</td>
-                                <td>Clean Room</td>
-                                <td>2019-03-11 17:58:08</td>
-                                <td>Completed</td>
-                            </tr>
-
-                            <tr>
-                                <td>
-                                    100
-                                </td>
-                                <td>Ram</td>
-                                <td>House Keeping</td>
-                                <td>Clean Room</td>
-                                <td>2019-03-11 17:58:08</td>
-                                <td>Completed</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    100
-                                </td>
-                                <td>Ram</td>
-                                <td>House Keeping</td>
-                                <td>Clean Room</td>
-                                <td>2019-03-11 17:58:08</td>
-                                <td>Completed</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    100
-                                </td>
-                                <td>Ram</td>
-                                <td>House Keeping</td>
-                                <td>Clean Room</td>
-                                <td>2019-03-11 17:58:08</td>
-                                <td>Completed</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    100
-                                </td>
-                                <td>Ram</td>
-                                <td>House Keeping</td>
-                                <td>Clean Room</td>
-                                <td>2019-03-11 17:58:08</td>
-                                <td>Completed</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    100
-                                </td>
-                                <td>Ram</td>
-                                <td>House Keeping</td>
-                                <td>Clean Room</td>
-                                <td>2019-03-11 17:58:08</td>
-                                <td>Completed</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    100
-                                </td>
-                                <td>Ram</td>
-                                <td>House Keeping</td>
-                                <td>Clean Room</td>
-                                <td>2019-03-11 17:58:08</td>
-                                <td>Completed</td>
+                            <tr *ngFor='let frontdesk of frontdesk_array_close'>
+                                <td>{{frontdesk.room_no}}</td>
+                                <td>{{frontdesk.fditem_id}}</td>
+                                <td>{{frontdesk.fdcategory_name}}</td>
+                                <td>{{frontdesk.fditem_names}}</td>
+                                <td>{{frontdesk.request_time}}</td>
+                                <td>{{frontdesk.ticketstatus}}</td>
+                            
                             </tr>
 
                         </tbody>

@@ -9,156 +9,24 @@
                     <table class="table table-hover table-bordered table-striped tableBodyScroll">
                         <thead class="text-primary">
                             <tr>
-                                <th width="50px">SI.No</th>
-                                <th>Room&nbsp;No</th>
-                                <th>Name</th>
-                                <th>Request&nbsp;Details</th>
-                                <th>Request&nbsp;Status</th>
-                                <th>Request&nbsp;Time</th>
-                                <th>Cost</th>
+                                
+                                <th>Room Number</th>
+                                <th>Guest Name</th>
+                                <th>Total Amount</th>                                
+                                <th style="width: 300px">Ticket Number</th>
                                 <th>Edit</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td width="50px">1</td>
-                                <td>100</td>
-                                <td>Siva</td>
-                                <td>Tea</td>
-                                <td>Requested</td>
-                                <td>6.00 pm</td>
-                                <td>50</td>
-                                <td><i class="fa fa-pencil-square-o"></i></td>
-                            </tr>
-                            <tr>
-                                <td width="50px">2</td>
-                                <td>100</td>
-                                <td>Siva</td>
-                                <td>Tea</td>
-                                <td>Requested</td>
-                                <td>6.00 pm</td>
-                                <td>50</td>
-                                <td><i class="fa fa-pencil-square-o"></i></td>
-                            </tr>
-                            <tr>
-                                <td width="50px">3</td>
-                                <td>100</td>
-                                <td>Siva</td>
-                                <td>Tea</td>
-                                <td>Requested</td>
-                                <td>6.00 pm</td>
-                                <td>50</td>
-                                <td><i class="fa fa-pencil-square-o"></i></td>
-                            </tr>
-                            <tr>
-                                <td width="50px">4</td>
-                                <td>100</td>
-                                <td>Siva</td>
-                                <td>Tea</td>
-                                <td>Requested</td>
-                                <td>6.00 pm</td>
-                                <td>50</td>
-                                <td><i class="fa fa-pencil-square-o"></i></td>
-                            </tr>
-                            <tr>
-                                <td width="50px">5</td>
-                                <td>100</td>
-                                <td>Siva</td>
-                                <td>Tea</td>
-                                <td>Requested</td>
-                                <td>6.00 pm</td>
-                                <td>50</td>
-                                <td><i class="fa fa-pencil-square-o"></i></td>
-                            </tr>
-                            <tr>
-                                <td width="50px">6</td>
-                                <td>100</td>
-                                <td>Siva</td>
-                                <td>Tea</td>
-                                <td>Requested</td>
-                                <td>6.00 pm</td>
-                                <td>50</td>
-                                <td><i class="fa fa-pencil-square-o"></i></td>
-                            </tr>
-                            <tr>
-                                <td width="50px">7</td>
-                                <td>100</td>
-                                <td>Siva</td>
-                                <td>Tea</td>
-                                <td>Requested</td>
-                                <td>6.00 pm</td>
-                                <td>50</td>
-                                <td><i class="fa fa-pencil-square-o"></i></td>
-                            </tr>
-                            <tr>
-                                <td width="50px">8</td>
-                                <td>100</td>
-                                <td>Siva</td>
-                                <td>Tea</td>
-                                <td>Requested</td>
-                                <td>6.00 pm</td>
-                                <td>50</td>
-                                <td><i class="fa fa-pencil-square-o"></i></td>
-                            </tr>
-                            <tr>
-                                <td width="50px">9</td>
-                                <td>100</td>
-                                <td>Siva</td>
-                                <td>Tea</td>
-                                <td>Requested</td>
-                                <td>6.00 pm</td>
-                                <td>50</td>
-                                <td><i class="fa fa-pencil-square-o"></i></td>
-                            </tr>
-                            <tr>
-                                <td width="50px">10</td>
-                                <td>100</td>
-                                <td>Siva</td>
-                                <td>Tea</td>
-                                <td>Requested</td>
-                                <td>6.00 pm</td>
-                                <td>50</td>
-                                <td><i class="fa fa-pencil-square-o"></i></td>
-                            </tr>
-                            <tr>
-                                <td width="50px">11</td>
-                                <td>100</td>
-                                <td>Siva</td>
-                                <td>Tea</td>
-                                <td>Requested</td>
-                                <td>6.00 pm</td>
-                                <td>50</td>
-                                <td><i class="fa fa-pencil-square-o"></i></td>
-                            </tr>
-                            <tr>
-                                <td width="50px">12</td>
-                                <td>100</td>
-                                <td>Siva</td>
-                                <td>Tea</td>
-                                <td>Requested</td>
-                                <td>6.00 pm</td>
-                                <td>50</td>
-                                <td><i class="fa fa-pencil-square-o"></i></td>
-                            </tr>
-                            <tr>
-                                <td width="50px">13</td>
-                                <td>100</td>
-                                <td>Siva</td>
-                                <td>Tea</td>
-                                <td>Requested</td>
-                                <td>6.00 pm</td>
-                                <td>50</td>
-                                <td><i class="fa fa-pencil-square-o"></i></td>
-                            </tr>
-                            <tr>
-                                <td width="50px">14</td>
-                                <td>100</td>
-                                <td>Siva</td>
-                                <td>Tea</td>
-                                <td>Requested</td>
-                                <td>6.00 pm</td>
-                                <td>50</td>
-                                <td><i class="fa fa-pencil-square-o"></i></td>
+                            <tr *ngFor='let food of food_request_param '>                              
+                                <td>{{food.room_no}}</td>
+                                <td>{{food.guest_name}}</td>
+                                <td>{{food.total_amount}}</td>
+                                <td style="width: 320px">{{food.ticket_no}}</td>
+
+                                <td><i class="fa fa-pencil-square-o" data-toggle="modal" data-target="#myModal"
+                                        (click)="food_popup(food)"></i></td>
+
                             </tr>
                         </tbody>
                     </table>
@@ -166,4 +34,69 @@
         </div>
     </div>
 </div>
+</div>
+
+
+   <!-- Modal -->
+   <div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="card-header card-header-info">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Modal Header</h4>
+            </div>
+            <div class="modal-body" >
+                <div class="row" style="margin: 20px">
+                    <table class="table table-bordered table-striped table-hover tableBodyScroll">
+                        <thead class="text-info">
+                            <tr>
+                                <th>SI.NO</th>
+                                <th>RoomNo</th>                                   
+                                <th>Food&nbsp;Iteam</th>                                                                        
+                                <th>Category</th>  
+                                <th>Food&nbsp;Instruction</th> 
+                                <th>Request&nbsp;Time</th> 
+                                <th>Price</th>                                 
+                            </tr>
+
+                        </thead>
+                        <tbody>
+                            <tr *ngFor='let food_iteams_details of food_iteam;let i = index'>
+                                <td>{{i+1}}</td>
+                                <td>{{food_iteams_details.room_no}}</td>
+                                <td>{{food_iteams_details.item_name}}</td>
+                                <td>{{food_iteams_details.foodcateg_name}}</td>                                   
+                                <td>{{food_iteams_details.item_description}}</td>
+                                <td>{{food_iteams_details.request_time}}</td>                                  
+                                <td>{{food_iteams_details.price}}</td>                                  
+                            </tr>
+
+                            <tr *ngIf='food_iteam !=0'>
+                                <th colspan="6">Total Price</th>
+                                <td>{{food_details}}</td>
+                                
+                            </tr>
+                            <tr *ngIf='close_ticket !=0'>
+                                <th colspan="2">Close Ticket</th>
+                            <td>
+                                <button type="button" class="btn btn-default" (change)="select(close_ticket)">Close The Ticket</button>
+                                
+                            </td>
+                            </tr>
+                       
+
+
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
 </div>

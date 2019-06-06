@@ -1,154 +1,90 @@
 <div class="main-content">
-  <div class="container-fluid">
-    <div class="card">
-        <div class="card-header card-header-success">
-            <h4 class="card-title">Maintence</h4>
-            <!-- <p class="card-category">Created using Roboto Font Family</p> -->
-        </div>
-        <div class="card-body">
-                <div class="row">
-                    <table class="table table-hover table-bordered table-striped tableBodyScroll">
-                        <thead class="text-primary">
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-header card-header-success" style="margin-top: -50px">
+
+                <form class="navbar-form">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <h4 class="card-title" style="margin-top: 6px">Maintenance</h4>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="input-group no-border" style="margin-left: 220%;">
+                                <input type="text" value="" class="form-control" placeholder="Search...">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="card-body" id="accordian">
+                <div class="row backcolor" role="button" data-toggle="collapse" href="#collapseOne" aria-expanded="true"
+                    aria-controls="collapseOne">
+                    <a style="float:left" id="a">Over all Tickets</a>
+                </div>
+                <div class="row collapse show" id="collapseOne" role="tabpanel" data-parent="#accordian">
+                    <table class="table table-bordered table-striped table-hover tableBodyScroll">
+                        <thead class="text-info">
                             <tr>
-                                <th width="50px">SI.No</th>
-                                <th>Room&nbsp;No</th>
+                                <th>Room No</th>
                                 <th>Name</th>
-                                <th>Request&nbsp;Details</th>
-                                <th>Request&nbsp;Status</th>
-                                <th>Request&nbsp;Time</th>
-                                
+                                <th>Department</th>
+                                <th>Request Details</th>
+                                <th>Request Time</th>
+                                <th>Request Status</th>
+                                <th>Edit</th>
                             </tr>
+
                         </thead>
                         <tbody>
-                            <tr>
-                                <td width="50px">1</td>
-                                <td>100</td>
-                                <td>Siva</td>
-                                <td>Tea</td>
-                                <td>Requested</td>
-                                <td>6.00 pm</td>
-                              
+                            <tr *ngFor='let maintenance of maintenance_array_open'>
+                                <td>{{maintenance.room_no}}</td>
+                                <td>{{maintenance.guest_name}}</td>
+                                <td>{{maintenance.hkcateg_name}}</td>
+                                <td>{{maintenance.hkitem_name}}</td>
+                                <td>{{maintenance.request_time}}</td>
+                                <td>{{maintenance.ticketstatus}}</td>
+                                <td>
+                                    <ui-switch size="small" [checked]="true" (change)="select(maintenance)">
+                                    </ui-switch>
+                                </td>
                             </tr>
-                            <tr>
-                                <td width="50px">2</td>
-                                <td>100</td>
-                                <td>Siva</td>
-                                <td>Tea</td>
-                                <td>Requested</td>
-                                <td>6.00 pm</td>
-                               
-                            </tr>
-                            <tr>
-                                <td width="50px">3</td>
-                                <td>100</td>
-                                <td>Siva</td>
-                                <td>Tea</td>
-                                <td>Requested</td>
-                                <td>6.00 pm</td>
-                               
-                            </tr>
-                            <tr>
-                                <td width="50px">4</td>
-                                <td>100</td>
-                                <td>Siva</td>
-                                <td>Tea</td>
-                                <td>Requested</td>
-                                <td>6.00 pm</td>
-                                
-                            </tr>
-                            <tr>
-                                <td width="50px">5</td>
-                                <td>100</td>
-                                <td>Siva</td>
-                                <td>Tea</td>
-                                <td>Requested</td>
-                                <td>6.00 pm</td>
-                                
-                            </tr>
-                            <tr>
-                                <td width="50px">6</td>
-                                <td>100</td>
-                                <td>Siva</td>
-                                <td>Tea</td>
-                                <td>Requested</td>
-                                <td>6.00 pm</td>
-                               
-                            </tr>
-                            <tr>
-                                <td width="50px">7</td>
-                                <td>100</td>
-                                <td>Siva</td>
-                                <td>Tea</td>
-                                <td>Requested</td>
-                                <td>6.00 pm</td>
-                              
-                            </tr>
-                            <tr>
-                                <td width="50px">8</td>
-                                <td>100</td>
-                                <td>Siva</td>
-                                <td>Tea</td>
-                                <td>Requested</td>
-                                <td>6.00 pm</td>
-                              
-                            </tr>
-                            <tr>
-                                <td width="50px">9</td>
-                                <td>100</td>
-                                <td>Siva</td>
-                                <td>Tea</td>
-                                <td>Requested</td>
-                                <td>6.00 pm</td>
-                             
-                            </tr>
-                            <tr>
-                                <td width="50px">10</td>
-                                <td>100</td>
-                                <td>Siva</td>
-                                <td>Tea</td>
-                                <td>Requested</td>
-                                <td>6.00 pm</td>
-                   
-                            </tr>
-                            <tr>
-                                <td width="50px">11</td>
-                                <td>100</td>
-                                <td>Siva</td>
-                                <td>Tea</td>
-                                <td>Requested</td>
-                                <td>6.00 pm</td>
-                             
-                            </tr>
-                            <tr>
-                                <td width="50px">12</td>
-                                <td>100</td>
-                                <td>Siva</td>
-                                <td>Tea</td>
-                                <td>Requested</td>
-                                <td>6.00 pm</td>
-                         
-                            </tr>
-                            <tr>
-                                <td width="50px">13</td>
-                                <td>100</td>
-                                <td>Siva</td>
-                                <td>Tea</td>
-                                <td>Requested</td>
-                                <td>6.00 pm</td>
-                               
-                            </tr>
-                            <tr>
-                                <td width="50px">14</td>
-                                <td>100</td>
-                                <td>Siva</td>
-                                <td>Tea</td>
-                                <td>Requested</td>
-                                <td>6.00 pm</td>
-                               
-                            </tr>
+
                         </tbody>
                     </table>
                 </div>
+                <div class="row backcolorone" role="button" data-toggle="collapse" href="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+
+                    <a style="float:left" id="aone">Closed Tickets</a>
+
+                </div>
+                <div class="row collapse " id="collapseTwo" role="tabpanel" data-parent="#accordian">
+                    <table class="table table-bordered table-striped table-hover tableBodyScroll">
+                        <thead class="text-info">
+                            <tr>
+                                <th>Room No</th>
+                                <th>Name</th>
+                                <th>Department</th>
+                                <th>Request Details</th>
+                                <th>Request Time</th>
+                                <th>Request Status</th>
+                            </tr>
+
+                        </thead>
+                        <tbody>
+                            <tr *ngFor='let maintenance of maintenance_array_close'>
+                                <td>{{maintenance.room_no}}</td>
+                                <td>{{maintenance.hkitem_id}}</td>
+                                <td>{{maintenance.hkcateg_name}}</td>
+                                <td>{{maintenance.hkitem_name}}</td>
+                                <td>{{maintenance.request_time}}</td>
+                                <td>{{maintenance.ticketstatus}}</td>
+                            </tr>
+                           
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
-</div>

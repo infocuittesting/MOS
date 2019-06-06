@@ -35,3 +35,13 @@ cursor: pointer;
 margin: 10px;
 cursor: pointer;
   }
+
+  .switch-small[_ngcontent-c6] {
+    width: 50px !important;
+    height: 20px !important;
+    border-radius: 20px;
+  }
+  
+  .switch-small.checked[_ngcontent-c6] small[_ngcontent-c6] {
+    left: 30px !important;
+  }

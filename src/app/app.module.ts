@@ -25,15 +25,25 @@ import { LaundryComponent } from './laundry/laundry.component';
 import { MaintenanceComponent } from './maintenance/maintenance.component';
 import { ReservationComponent } from './reservation/reservation.component';
 import { ProfileComponent } from './profile/profile.component';
+import { UiSwitchModule} from 'ngx-toggle-switch';
+import { ToastrModule} from 'ngx-toastr';
+import { NgxWebstorageModule } from 'ngx-webstorage';
 
 @NgModule({
   imports: [
     BrowserAnimationsModule,
+    NgxWebstorageModule.forRoot(),
     FormsModule,
     HttpModule,
     ComponentsModule,
     RouterModule,
     AppRoutingModule,
+    UiSwitchModule,
+    ToastrModule.forRoot({
+      timeOut: 1000,
+      positionClass: 'toast-bottom-right',
+      preventDuplicates: true,
+    }),
   
   ],
   declarations: [
