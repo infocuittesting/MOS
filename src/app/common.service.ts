@@ -171,6 +171,24 @@ reservation_update_details(param):  Observable<object[]> {
     //.catch(this.handleErrorObservable);
 }
 
+food_and_beverage_configuration(param):  Observable<object[]> {
+       
+  const headers = new Headers({'Content-Type':'application/json'})
+  const options = new RequestOptions({ headers: headers });
+ return this.http.post('https://mos-android.herokuapp.com/Foodandbeverage_Items',param,options)
+    .map(this.extractData)
+    //.catch(this.handleErrorObservable);
+}
+
+select_food_category(param):  Observable<object[]> {
+       
+  const headers = new Headers({'Content-Type':'application/json'})
+  const options = new RequestOptions({ headers: headers });
+ return this.http.post('https://mos-android.herokuapp.com/Select_Food_Category',param,options)
+    .map(this.extractData)
+    //.catch(this.handleErrorObservable);
+}
+
   private extractData(res: Response) {
     //alert('hai20')
     console.log('res========---===='+res);

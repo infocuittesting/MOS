@@ -33,6 +33,10 @@
                                             Configure </a>
                                     </li>
                                     <li class="nav-item">
+                                        <a class="nav-link  nav-link1" data-toggle="pill" href="#room_type_config">Room
+                                            Type</a>
+                                    </li>
+                                    <li class="nav-item">
                                         <a class="nav-link  nav-link1" data-toggle="pill" href="#profdetail2">Room
                                             Details</a>
                                     </li>
@@ -69,6 +73,39 @@
                                             <br>
                                         </form>
                                     </div>
+
+                                    <div id="room_type_config" class="container tab-pane testborder">
+                                        <br>
+                                        <form action="">
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <input type="text" placeholder="Enter Room NO" name="name" id=""
+                                                            class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <input type="text" placeholder="Enter Room Type" name="name"
+                                                            id="" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <input type="text" placeholder="Enter Floor" name="name" id=""
+                                                            class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <button class="btn btn-info">
+                                                        Submit
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <br>
+                                        </form>
+                                    </div>
+
                                     <div id="profdetail2" class="container tab-pane testborder">
                                         <div class="table-responsive">
                                             <table class="table">
@@ -215,52 +252,68 @@
                                 <div class="tab-content">
                                     <div id="createprofile2" class="container tab-pane active testborder">
                                         <br>
-                                        <form action="">
+                                        <form id="" #foodconfig="ngForm">
                                             <div class="row">
                                                 <div class="col-md-3">
                                                     <div class="form-group">
-                                                        <input type="text" placeholder="Enter Item Name" name="name"
-                                                            id="" class="form-control">
+                                                        <input type="text" placeholder="Enter Item Name" name="itemname"
+                                                            id="" class="form-control"
+                                                            [(ngModel)]="food_config.item_name">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3">
-                                                    <div class="form-group">
-                                                        <input type="text" placeholder="Enter Category Name" name="name"
-                                                            id="" class="form-control">
-                                                    </div>
+                                                    <select name="catename" id="" class="form-control"
+                                                        [(ngModel)]="food_config.cate_name">
+                                                        <option default="" disabled selected>Slect Category Name
+                                                        </option>
+                                                        <option *ngFor="let select_drop_down of food_select_drop_down"
+                                                            [ngValue]="select_drop_down.foodcateg_id">
+                                                            {{select_drop_down.foodcateg_name}}</option>
+                                                    </select>
                                                 </div>
                                                 <div class="col-md-3">
-                                                    <div class="form-group">
-                                                        <input type="text" placeholder="Enter Food Type" name="name" id=""
-                                                            class="form-control">
-                                                    </div>
+                                                    <select name="foodtype" id="foodtype" class="form-control"
+                                                        [(ngModel)]="food_config.food_type">
+                                                        <option default="" disabled selected>Select Food Type Name
+                                                        </option>
+                                                        <option [ngValue]="1">VEG</option>
+                                                        <option [ngValue]="2">NON-VEG</option>
+                                                    </select>
                                                 </div>
                                                 <div class="col-md-3">
-                                                    <div class="form-group">
-                                                        <input type="email" placeholder="Enter Offers" name="name"
-                                                            id="" class="form-control">
-                                                    </div>
+                                                    <input type="file"  accept="image/*" (change)="ActiveListener($event)" name="image"[(ngModel)]="food_config.img">
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                    <div class="col-md-3">
-                                                        <div class="form-group">
-                                                            <input type="text" placeholder="Today Special" name="name"
-                                                                id="" class="form-control">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-3">
-                                                        <div class="form-group">
-                                                            <input type="text" placeholder="Enter Food Rate" name="name"
-                                                                id="" class="form-control">
-                                                        </div>
+                                                <div class="col-md-3">
+                                                    <select placeholder="Today SPL" name="todayspl" id="todayspl"
+                                                        class="form-control" [(ngModel)]="food_config.today_spl">
+                                                        <option default="" disabled selected>Select Today Spl</option>
+                                                        <option [ngValue]="1">YES</option>
+                                                        <option [ngValue]="2">NO</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <input type="text" placeholder="Enter Food Rate" name="rate"
+                                                            id="" class="form-control" [(ngModel)]="food_config.rate">
                                                     </div>
                                                 </div>
-                                                <br>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <input type="text" placeholder="Enter Iteam Description"
+                                                            name="rate" id="" class="form-control"
+                                                            [(ngModel)]="food_config.iteam_description">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <br>
                                             <div class="row">
                                                 <div class="col-5"></div>
                                                 <div class="col-2">
-                                                    <button class="btn btn-info">
+                                                    <button type="reset" class="btn btn-info form-group"
+                                                        (click)='food_config_insert(food_config)'
+                                                        [disabled]="!foodconfig.valid">
                                                         Submit
                                                     </button>
                                                 </div>
@@ -389,7 +442,8 @@
                                             Configure</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link  nav-link3" data-toggle="pill" href="#profdetail4">Laundry Details</a>
+                                        <a class="nav-link  nav-link3" data-toggle="pill" href="#profdetail4">Laundry
+                                            Details</a>
                                     </li>
                                 </ul>
                                 <div class="tab-content">
