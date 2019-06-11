@@ -39,7 +39,7 @@
                         <tbody>
                             <tr *ngFor='let frontdesk of frontdesk_array_open'>
                                 <td>{{frontdesk.room_no}}</td>
-                                <td>{{frontdesk.fditem_id}}</td>
+                                <td>{{frontdesk.guest_name}}</td>
                                 <td>{{frontdesk.fdcategory_name}}</td>
                                 <td>{{frontdesk.fditem_names}}</td>
                                 <td>{{frontdesk.request_time}}</td>
@@ -75,7 +75,7 @@
                         <tbody>
                             <tr *ngFor='let frontdesk of frontdesk_array_close'>
                                 <td>{{frontdesk.room_no}}</td>
-                                <td>{{frontdesk.fditem_id}}</td>
+                                <td>{{frontdesk.guest_name}}</td>
                                 <td>{{frontdesk.fdcategory_name}}</td>
                                 <td>{{frontdesk.fditem_names}}</td>
                                 <td>{{frontdesk.request_time}}</td>

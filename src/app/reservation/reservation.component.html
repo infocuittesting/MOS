@@ -19,21 +19,24 @@
             <div class="tab-content">
               <div id="createreservation" class="container tab-pane active testborder">
                 <br>
-                <form  id="" #myform="ngForm">
+                <form id="" #myform="ngForm">
                   <div class="row">
                     <div class="col-md-3">
                       <div class="form-group">
-                        <input type="text" placeholder="Enter Mobile Number" name="mobile" id="" class="form-control" [(ngModel)]="reservation.mobile">
+                        <input type="text" placeholder="Enter Mobile Number" name="mobile" id="" class="form-control"
+                          [(ngModel)]="reservation.mobile">
                       </div>
                     </div>
                     <div class="col-md-3">
                       <div class="form-group">
-                        <input type="text" placeholder="Enter No of Adults" name="Adults" id="" class="form-control" [(ngModel)]="reservation.Adults">
+                        <input type="text" placeholder="Enter No of Adults" name="Adults" id="" class="form-control"
+                          [(ngModel)]="reservation.Adults">
                       </div>
                     </div>
                     <div class="col-md-3">
                       <div class="form-group">
-                        <input type="text" placeholder="Enter No Of Child" name="Child" id="" class="form-control" [(ngModel)]="reservation.Child">
+                        <input type="text" placeholder="Enter No Of Child" name="Child" id="" class="form-control"
+                          [(ngModel)]="reservation.Child">
                       </div>
                     </div>
                   </div>
@@ -41,20 +44,23 @@
                     <div class="col-md-3">
                       <div class="form-group">
                         <input type="text" onfocus="(this.type='date')" onblur="(this.type='text')"
-                          placeholder="Enter Checkin Date" name="Checkin" id="" class="form-control" [(ngModel)]="reservation.Checkin">
+                          placeholder="Enter Checkin Date" name="Checkin" id="" class="form-control"
+                          [(ngModel)]="reservation.Checkin">
                       </div>
                     </div>
                     <div class="col-md-3">
                       <div class="form-group">
                         <input type="text" onfocus="(this.type='date')" onblur="(this.type='text')"
-                          placeholder="Enter CheckOut Date" name="CheckOut" id="" class="form-control" [(ngModel)]="reservation.CheckOut">
+                          placeholder="Enter CheckOut Date" name="CheckOut" id="" class="form-control"
+                          [(ngModel)]="reservation.CheckOut">
                       </div>
                     </div>
                     <div class="col-md-3">
                       <div class="form-group">
-                        <select placeholder="Enter Room No" name="Room" id="" class="form-control" [(ngModel)]="reservation.room_no">
+                        <select placeholder="Enter Room No" name="Room" id="" class="form-control"
+                          [(ngModel)]="reservation.room_no">
                           <option value="" disabled selected>Select</option>
-                          <option  *ngFor="let list of room_select" [ngValue] = "list.room_no">{{list.room_no}}</option>  
+                          <option *ngFor="let list of room_select" [ngValue]="list.room_no">{{list.room_no}}</option>
                         </select>
                       </div>
                     </div>
@@ -62,7 +68,7 @@
                   <div class="row">
                     <div class="col-5"></div>
                     <div class="col-2">
-                        <button type="reset" class="btn btn-info form-group" (click)='reservation_insert(reservation)'
+                      <button type="reset" class="btn btn-info form-group" (click)='reservation_insert(reservation)'
                         [disabled]="!myform.valid">
                         Submit
                       </button>
@@ -103,7 +109,7 @@
                           <td><i class="fa fa-pencil-square-o" data-toggle="modal" data-target="#reservation_Modal"
                               (click)="reservation_edit_details(select_reservation_details)"></i></td>
 
-                        </tr>         
+                        </tr>
                       </tbody>
                     </table>
                   </div>
@@ -128,21 +134,30 @@
         <h4 class="modal-title">Update Reservation</h4>
       </div>
       <div class="modal-body">
-        <form  id="" #myform="ngForm">
+        <form id="" #myform="ngForm">
           <div class="row">
             <div class="col-md-3">
               <div class="form-group">
-                <input type="text" placeholder="Enter Mobile Number" name="mobile" id="" class="form-control" [(ngModel)]="edit_reservation.mobile">
+                <input type="text" placeholder="Name" name="Name" id="" class="form-control"
+                  [(ngModel)]="edit_reservation.guest_name">
               </div>
             </div>
             <div class="col-md-3">
               <div class="form-group">
-                <input type="text" placeholder="Enter No of Adults" name="Adults" id="" class="form-control" [(ngModel)]="edit_reservation.Adults">
+                <input type="text" placeholder="Enter Mobile Number" name="mobile" id="" class="form-control"
+                  [(ngModel)]="edit_reservation.mobile">
               </div>
             </div>
             <div class="col-md-3">
               <div class="form-group">
-                <input type="text" placeholder="Enter No Of Child" name="Child" id="" class="form-control" [(ngModel)]="edit_reservation.Child">
+                <input type="text" placeholder="Enter No of Adults" name="Adults" id="" class="form-control"
+                  [(ngModel)]="edit_reservation.Adults">
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <input type="text" placeholder="Enter No Of Child" name="Child" id="" class="form-control"
+                  [(ngModel)]="edit_reservation.Child">
               </div>
             </div>
           </div>
@@ -150,20 +165,23 @@
             <div class="col-md-3">
               <div class="form-group">
                 <input type="text" onfocus="(this.type='date')" onblur="(this.type='text')"
-                  placeholder="Enter Checkin Date" name="Checkin" id="" class="form-control" [(ngModel)]="edit_reservation.Checkin">
+                  placeholder="Enter Checkin Date" name="Checkin" id="" class="form-control"
+                  [(ngModel)]="edit_reservation.Checkin">
               </div>
             </div>
             <div class="col-md-3">
               <div class="form-group">
                 <input type="text" onfocus="(this.type='date')" onblur="(this.type='text')"
-                  placeholder="Enter CheckOut Date" name="CheckOut" id="" class="form-control" [(ngModel)]="edit_reservation.CheckOut">
+                  placeholder="Enter CheckOut Date" name="CheckOut" id="" class="form-control"
+                  [(ngModel)]="edit_reservation.CheckOut">
               </div>
             </div>
             <div class="col-md-3">
               <div class="form-group">
-                <select placeholder="Enter Room No" name="Room" id="" class="form-control" [(ngModel)]="edit_reservation.room_no">
+                <select placeholder="Enter Room No" name="Room" id="" class="form-control"
+                  [(ngModel)]="edit_reservation.room_no">
                   <option value="" disabled selected>Select</option>
-                  <option  *ngFor="let list of room_select" [ngValue] = "list.room_no">{{list.room_no}}</option>  
+                  <option *ngFor="let list of room_select" [ngValue]="list.room_no">{{list.room_no}}</option>
                 </select>
               </div>
             </div>
@@ -171,8 +189,8 @@
           <div class="row">
             <div class="col-5"></div>
             <div class="col-2">
-                <button type="reset" class="btn btn-info form-group" (click)='reservation_update_details(edit_reservation)'
-                [disabled]="!myform.valid">
+              <button type="reset" class="btn btn-info form-group"
+                (click)='reservation_update_details(edit_reservation)' [disabled]="!myform.valid">
                 Submit
               </button>
             </div>

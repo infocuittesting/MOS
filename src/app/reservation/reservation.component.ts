@@ -77,6 +77,7 @@ export class ReservationComponent implements OnInit {
   reservation_edit_details(param){
     console.log("edit_reservation",param)
 
+    this.edit_reservation.guest_name = param.guest_name
     this.edit_reservation.mobile = param.mobile_no
     this.edit_reservation.Adults = param.adult
     this.edit_reservation.Child = param.child
