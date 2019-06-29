@@ -44,31 +44,52 @@
                                 <div class="tab-content">
                                     <div id="createprofile1" class="container tab-pane active testborder">
                                         <br>
-                                        <form action="">
+                                        <form #res1="ngForm">
                                             <div class="row">
                                                 <div class="col-md-3">
                                                     <div class="form-group">
-                                                        <input type="text" placeholder="Enter Room NO" name="name" id=""
-                                                            class="form-control">
+                                                        <input type="text" placeholder="Enter Room NO" name="roomno"
+                                                            id="" class="form-control" [(ngModel)]="roomcon.Room_no">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3">
                                                     <div class="form-group">
-                                                        <input type="text" placeholder="Enter Room Type" name="name"
-                                                            id="" class="form-control">
+                                                        <select type="text" placeholder="Enter Room Type"
+                                                            name="roomtype" id="" class="form-control"
+                                                            [(ngModel)]="roomcon.Room_type">
+                                                            <option [ngValue]="undefined" disabled selected>--- Select
+                                                                Room Type
+                                                                ---</option>
+                                                            <option *ngFor="let item of rmtype"
+                                                                [ngValue]="item.roomtype_id">{{item.roomtype_name}}
+                                                            </option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3">
                                                     <div class="form-group">
-                                                        <input type="text" placeholder="Enter Floor" name="name" id=""
-                                                            class="form-control">
+                                                        <input type="text" placeholder="Enter Room Price" name="price"
+                                                            id="" class="form-control" [(ngModel)]="roomcon.Room_price">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3">
-                                                    <button class="btn btn-info">
+                                                    <div class="form-group">
+                                                        <input type="text" placeholder="Enter password" name="password"
+                                                            id="" class="form-control"
+                                                            [(ngModel)]="roomcon.Room_password">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <div class="row">
+                                                <div class="col-md-4"></div>
+                                                <div class="col-md-4">
+                                                    <button class="btn btn-info" style="width:100%"
+                                                        (click)="insertroom(roomcon,res1)">
                                                         Submit
                                                     </button>
                                                 </div>
+                                                <div class="col-md-4"></div>
                                             </div>
                                             <br>
                                         </form>
@@ -76,40 +97,52 @@
 
                                     <div id="room_type_config" class="container tab-pane testborder">
                                         <br>
-                                        <form action="">
+                                        <form #res="ngForm">
                                             <div class="row">
-                                                <div class="col-md-3">
+                                                <div class="col-md-1"></div>
+                                                <div class="col-md-4">
                                                     <div class="form-group">
                                                         <input type="text" placeholder="Enter Room NO" name="name" id=""
-                                                            class="form-control">
+                                                            class="form-control" [(ngModel)]="roomtype_name">
                                                     </div>
                                                 </div>
+                                                <div class="col-md-1"></div>
                                                 <div class="col-md-3">
-                                                    <div class="form-group">
-                                                        <input type="text" placeholder="Enter Room Type" name="name"
-                                                            id="" class="form-control">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <div class="form-group">
-                                                        <input type="text" placeholder="Enter Floor" name="name" id=""
-                                                            class="form-control">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <button class="btn btn-info">
+                                                    <button class="btn btn-info"
+                                                        (click)="insertrmty(roomtype_name,res)">
                                                         Submit
                                                     </button>
                                                 </div>
                                             </div>
                                             <br>
                                         </form>
+                                        <div class="tableFixHead">
+                                            <table class="table table-bordered table-hover table-striped">
+                                                <thead class="table-info">
+                                                    <tr>
+                                                        <th style="width: 70px;">SI.NO</th>
+                                                        <th>Room&nbsp;Type</th>
+                                                        <th>Edit</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr *ngFor="let item of rmtype; let i=index;">
+                                                        <td style="width: 70px;">{{i+1}}</td>
+                                                        <td>{{item.roomtype_name}}</td>
+                                                        <td><i class="fa fa-edit"></i></td>
+                                                    </tr>
+                                                    <tr *ngIf="rmtype==0">
+                                                        <td>No Item Found</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </div>
-
                                     <div id="profdetail2" class="container tab-pane testborder">
-                                        <div class="table-responsive">
-                                            <table class="table">
-                                                <thead class=" text-primary">
+                                        <br>
+                                        <div class="table-responsive tableFixHead">
+                                            <table class="table table-bordered table-hover table-striped">
+                                                <thead class=" table-primary">
                                                     <th>
                                                         S.No
                                                     </th>
@@ -120,114 +153,32 @@
                                                         Room Type
                                                     </th>
                                                     <th>
-                                                        Room Floor
+                                                        Room Price
                                                     </th>
                                                     <th>
-                                                        Edit
+                                                        Room&nbsp;Password
                                                     </th>
                                                 </thead>
                                                 <tbody>
-                                                    <tr>
+                                                    <tr *ngFor="let item of rooms;let i=index">
                                                         <td>
-                                                            1
+                                                            {{i+1}}
                                                         </td>
                                                         <td>
-                                                            100
+                                                            {{item.room_no}}
                                                         </td>
                                                         <td>
-                                                            Flex Room
+                                                            {{item.roomtype_name}}
                                                         </td>
                                                         <td>
-                                                            First
+                                                            {{item.price}}
                                                         </td>
-                                                        <td class="text-primary">
-                                                            <i class="fa fa-edit"></i>
+                                                        <td>
+                                                            {{item.room_password}}
                                                         </td>
                                                     </tr>
-                                                    <tr>
-                                                        <td>
-                                                            1
-                                                        </td>
-                                                        <td>
-                                                            100
-                                                        </td>
-                                                        <td>
-                                                            Flex Room
-                                                        </td>
-                                                        <td>
-                                                            First
-                                                        </td>
-                                                        <td class="text-primary">
-                                                            <i class="fa fa-edit"></i>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            1
-                                                        </td>
-                                                        <td>
-                                                            100
-                                                        </td>
-                                                        <td>
-                                                            Flex Room
-                                                        </td>
-                                                        <td>
-                                                            First
-                                                        </td>
-                                                        <td class="text-primary">
-                                                            <i class="fa fa-edit"></i>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            1
-                                                        </td>
-                                                        <td>
-                                                            100
-                                                        </td>
-                                                        <td>
-                                                            Flex Room
-                                                        </td>
-                                                        <td>
-                                                            First
-                                                        </td>
-                                                        <td class="text-primary">
-                                                            <i class="fa fa-edit"></i>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            1
-                                                        </td>
-                                                        <td>
-                                                            100
-                                                        </td>
-                                                        <td>
-                                                            Flex Room
-                                                        </td>
-                                                        <td>
-                                                            First
-                                                        </td>
-                                                        <td class="text-primary">
-                                                            <i class="fa fa-edit"></i>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            1
-                                                        </td>
-                                                        <td>
-                                                            100
-                                                        </td>
-                                                        <td>
-                                                            Flex Room
-                                                        </td>
-                                                        <td>
-                                                            First
-                                                        </td>
-                                                        <td class="text-primary">
-                                                            <i class="fa fa-edit"></i>
-                                                        </td>
+                                                    <tr *ngIf="rooms==0">
+                                                        <td>No Item Found</td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -264,31 +215,43 @@
                                                 <div class="col-md-3">
                                                     <select name="catename" id="" class="form-control"
                                                         [(ngModel)]="food_config.cate_name">
-                                                        <option default="" disabled selected>Slect Category Name
+                                                        <option [ngValue]="undefined" disabled selected>Slect Category
+                                                            Name
                                                         </option>
                                                         <option *ngFor="let select_drop_down of food_select_drop_down"
                                                             [ngValue]="select_drop_down.foodcateg_id">
                                                             {{select_drop_down.foodcateg_name}}</option>
                                                     </select>
+
+                                                    <div class="form-group">
+                                                        <input type="text" placeholder="Enter Category Name"
+                                                            name="catename_name" id="" class="form-control"
+                                                            [(ngModel)]="food_config.cate_name_1">
+                                                    </div>
                                                 </div>
                                                 <div class="col-md-3">
                                                     <select name="foodtype" id="foodtype" class="form-control"
                                                         [(ngModel)]="food_config.food_type">
-                                                        <option default="" disabled selected>Select Food Type Name
+                                                        <option [ngValue]="undefined" disabled selected>Select Food Type
+                                                            Name
                                                         </option>
                                                         <option [ngValue]="1">VEG</option>
                                                         <option [ngValue]="2">NON-VEG</option>
                                                     </select>
                                                 </div>
                                                 <div class="col-md-3">
-                                                    <input type="file"  accept="image/*" (change)="ActiveListener($event)" name="image"[(ngModel)]="food_config.img">
+                                                    <input type="file" accept="image/*" title="Choose Category Image"
+                                                        (change)="ActiveListener($event)" name="image"
+                                                        [(ngModel)]="img"><label for="img">Click to upload Category
+                                                        image</label>
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col-md-3">
                                                     <select placeholder="Today SPL" name="todayspl" id="todayspl"
                                                         class="form-control" [(ngModel)]="food_config.today_spl">
-                                                        <option default="" disabled selected>Select Today Spl</option>
+                                                        <option [ngValue]="undefined" disabled selected>Select Today Spl
+                                                        </option>
                                                         <option [ngValue]="1">YES</option>
                                                         <option [ngValue]="2">NO</option>
                                                     </select>
@@ -306,6 +269,14 @@
                                                             [(ngModel)]="food_config.iteam_description">
                                                     </div>
                                                 </div>
+
+                                                <div class="col-md-3">
+                                                    <input type="file" accept="image/*" title="Choose Iteam Image"
+                                                        (change)="ActiveListener1($event)" name="image1"
+                                                        [(ngModel)]="img1"><label for="img">Click me to upload Iteam
+                                                        image</label>
+                                                </div>
+
                                             </div>
                                             <br>
                                             <div class="row">
@@ -323,114 +294,146 @@
                                         </form>
                                     </div>
                                     <div id="profdetail3" class="container tab-pane  testborder">
-                                        <div class="table-responsive">
-                                            <table class="table">
+                                        <br>
+                                        <div class="table-responsive tableFixHead">
+                                            <table
+                                                class="table table-hover table-bordered table-striped tableBodyScroll">
                                                 <thead class=" text-primary">
                                                     <tr>
-                                                        <th>S.No</th>
+                                                        <th width="50px">S.No</th>
                                                         <th>Item&nbsp;Name</th>
                                                         <th>Food&nbsp;Type</th>
                                                         <th>Catagory</th>
-                                                        <th>Status</th>
-                                                        <th>Offers(in&nbsp;Rs)</th>
+
                                                         <th>Today&nbsp;Specials</th>
                                                         <th>Price&nbsp;in&nbsp;Rs</th>
                                                         <th>Edit</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr>
-                                                        <td>1</td>
-                                                        <td>Dakota Rice</td>
-                                                        <td>Non-veg</td>
-                                                        <td>Starters</td>
-                                                        <td>Active</td>
-                                                        <td>0</td>
-                                                        <td>Yes</td>
-                                                        <td>Rs.100 </td>
-                                                        <td><i class="fa fa-edit"></i></td>
+                                                    <tr
+                                                        *ngFor='let food_iteam_select_details of food_iteam_select;let i =index '>
+                                                        <td width="50px">{{i+1}}</td>
+                                                        <td>{{food_iteam_select_details.item_name}}</td>
+                                                        <td>{{food_iteam_select_details.foodtype_name}}</td>
+                                                        <td>{{food_iteam_select_details.foodcateg_name}}</td>
+                                                        <td>{{food_iteam_select_details.special}}</td>
+                                                        <td>{{food_iteam_select_details.price}}</td>
+                                                        <td><i class="fa fa-pencil-square-o" data-toggle="modal"
+                                                                data-target="#myModal"
+                                                                (click)="food_iteam_select_details_edit(food_iteam_select_details)"></i>
+                                                        </td>
+
                                                     </tr>
-                                                    <tr>
-                                                        <td>1</td>
-                                                        <td>Dakota Rice</td>
-                                                        <td>Non-veg</td>
-                                                        <td>Starters</td>
-                                                        <td>Active</td>
-                                                        <td>0</td>
-                                                        <td>Yes</td>
-                                                        <td>Rs.100 </td>
-                                                        <td><i class="fa fa-edit"></i></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>1</td>
-                                                        <td>Dakota Rice</td>
-                                                        <td>Non-veg</td>
-                                                        <td>Starters</td>
-                                                        <td>Active</td>
-                                                        <td>0</td>
-                                                        <td>Yes</td>
-                                                        <td>Rs.100 </td>
-                                                        <td><i class="fa fa-edit"></i></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>1</td>
-                                                        <td>Dakota Rice</td>
-                                                        <td>Non-veg</td>
-                                                        <td>Starters</td>
-                                                        <td>Active</td>
-                                                        <td>0</td>
-                                                        <td>Yes</td>
-                                                        <td>Rs.100 </td>
-                                                        <td><i class="fa fa-edit"></i></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>1</td>
-                                                        <td>Dakota Rice</td>
-                                                        <td>Non-veg</td>
-                                                        <td>Starters</td>
-                                                        <td>Active</td>
-                                                        <td>0</td>
-                                                        <td>Yes</td>
-                                                        <td>Rs.100 </td>
-                                                        <td><i class="fa fa-edit"></i></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>1</td>
-                                                        <td>Dakota Rice</td>
-                                                        <td>Non-veg</td>
-                                                        <td>Starters</td>
-                                                        <td>Active</td>
-                                                        <td>0</td>
-                                                        <td>Yes</td>
-                                                        <td>Rs.100 </td>
-                                                        <td><i class="fa fa-edit"></i></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>1</td>
-                                                        <td>Dakota Rice</td>
-                                                        <td>Non-veg</td>
-                                                        <td>Starters</td>
-                                                        <td>Active</td>
-                                                        <td>0</td>
-                                                        <td>Yes</td>
-                                                        <td>Rs.100 </td>
-                                                        <td><i class="fa fa-edit"></i></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>1</td>
-                                                        <td>Dakota Rice</td>
-                                                        <td>Non-veg</td>
-                                                        <td>Starters</td>
-                                                        <td>Active</td>
-                                                        <td>0</td>
-                                                        <td>Yes</td>
-                                                        <td>Rs.100 </td>
-                                                        <td><i class="fa fa-edit"></i></td>
-                                                    </tr>
+
                                                 </tbody>
                                             </table>
                                         </div>
                                     </div>
+                                </div>
+                            </div>
+                            <!-- Modal -->
+                            <div id="myModal" class="modal fade" role="dialog">
+                                <div class="modal-dialog modal-dialog-centered modal-lg">
+
+                                    <!-- Modal content-->
+                                    <div class="modal-content" style="width: 900px">
+                                        <div class="card-header card-header-info">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title">Update Profile</h4>
+                                        </div>
+                                        <form id="" #foodconfig="ngForm" style="padding: 30px 30px 10px 30px">
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <input type="text" placeholder="Enter Item Name"
+                                                            name="itemname_edit" id="" class="form-control"
+                                                            [(ngModel)]="food_data_bind_value.item_name_edit">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <select name="catename_edit_edit" id="" class="form-control"
+                                                        [(ngModel)]="food_data_bind_value.cate_name_edit">
+                                                        <option [ngValue]="undefined" disabled selected>Slect Category
+                                                            Name
+                                                        </option>
+                                                        <option *ngFor="let select_drop_down of food_select_drop_down"
+                                                            [ngValue]="select_drop_down.foodcateg_id">
+                                                            {{select_drop_down.foodcateg_name}}</option>
+                                                    </select>
+
+
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <select name="foodtype_edit" id="foodtype" class="form-control"
+                                                        [(ngModel)]="food_data_bind_value.food_type_edit">
+                                                        <option [ngValue]="undefined" disabled selected>Select Food Type
+                                                            Name
+                                                        </option>
+                                                        <option [ngValue]="1">VEG</option>
+                                                        <option [ngValue]="2">NON-VEG</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <label class="btn btn-warning" style="width: 100%">Select Category
+                                                        img
+                                                        <input type="file" accept="image/*"
+                                                            title="Choose Category Image" style="display: none"
+                                                            (change)="ActiveListener3($event)" name="image_edit"
+                                                            [(ngModel)]="img"></label>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <select placeholder="Today SPL" name="todayspl" id="todayspl"
+                                                        class="form-control"
+                                                        [(ngModel)]="food_data_bind_value.today_spl_edit">
+                                                        <option [ngValue]="undefined" disabled selected>Select Today Spl
+                                                        </option>
+                                                        <option [ngValue]="1">YES</option>
+                                                        <option [ngValue]="2">NO</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <input type="text" placeholder="Enter Food Rate"
+                                                            name="rate_edit_details_edit" id="" class="form-control"
+                                                            [(ngModel)]="food_data_bind_value.rate_edit">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <input type="text" placeholder="Enter Iteam Description"
+                                                            name="rate_edit_details" id="" class="form-control"
+                                                            [(ngModel)]="food_data_bind_value.iteam_description_edit">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-3">
+                                                    <label class="btn btn-warning" style="width: 100%">Choose Iteam
+                                                        image
+                                                        <input type="file" accept="image/*" style="display: none"
+                                                            (change)="ActiveListener2($event)" name="image1_edit"
+                                                            [(ngModel)]="img1_edit"></label>
+                                                </div>
+
+                                            </div>
+                                            <br>
+                                            <div class="row">
+                                                <div class="col-5"></div>
+                                                <div class="col-2">
+                                                    <button type="reset" class="btn btn-info form-group"
+                                                        (click)='food_config_update(food_data_bind_value)'
+                                                        [disabled]="!foodconfig.valid" data-dismiss="modal">
+                                                        Submit
+                                                    </button>
+                                                </div>
+                                                <div class="col-5"></div>
+                                            </div>
+                                            <br>
+                                        </form>
+                                    </div>
+
                                 </div>
                             </div>
                             <div id="laundry" class="container tab-pane">
@@ -449,160 +452,216 @@
                                 <div class="tab-content">
                                     <div id="createprofile3" class="container tab-pane active testborder">
                                         <br>
-                                        <form action="">
+                                        <form #landy="ngForm">
                                             <div class="row">
-                                                <div class="col-md-3">
+                                                <div class="col-md-4">
                                                     <div class="form-group">
-                                                        <input type="text" placeholder="Enter Room NO" name="name" id=""
-                                                            class="form-control">
+                                                        <input type="text" placeholder="Enter Laundry Item"
+                                                            name="landryitem" id="" class="form-control"
+                                                            [(ngModel)]="user.ldryitem_name">
                                                     </div>
                                                 </div>
-                                                <div class="col-md-3">
+                                                <div class="col-md-4">
                                                     <div class="form-group">
-                                                        <input type="text" placeholder="Enter Room Type" name="name"
-                                                            id="" class="form-control">
+                                                        <input type="text" placeholder="Enter Item Price" name="price"
+                                                            id="" class="form-control" [(ngModel)]="user.price">
                                                     </div>
                                                 </div>
-                                                <div class="col-md-3">
+                                                <div class="col-md-4">
+                                                    <label class="btn btn-warning" style="width: 100%">
+                                                        Choose Item Image
+                                                        <input type="file" style="display: none" name="itemimage"
+                                                            (change)="ActiveListenerlaundryitem($event)" />
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <div class="row">
+                                                <div class="col-md-4">
                                                     <div class="form-group">
-                                                        <input type="text" placeholder="Enter Floor" name="name" id=""
-                                                            class="form-control">
+                                                        <div *ngIf="showhidedrop == true">
+                                                            <select name="cat" class="form-control"
+                                                                [(ngModel)]="laundarycat" (click)="showdropdown()">
+                                                                <option [ngValue]="undefined" disabled selected>---
+                                                                    Select Category ---</option>
+                                                                <option *ngFor="let item of laundary_array"
+                                                                    [ngValue]="item.laundry_items[0].ldrycateg_id">
+                                                                    {{item.laundry_items[0].ldrycateg_name}}</option>
+                                                            </select>
+                                                        </div>
+                                                        <div *ngIf="showhideinput == true">
+                                                            <input type="text" placeholder="Create Laundry Category"
+                                                                name="landryitem" class="form-control"
+                                                                [(ngModel)]="laundarycat" (click)="showinput()">
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-3">
-                                                    <button class="btn btn-info">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <input type="text" placeholder="Enter Description" name="name"
+                                                            id="" class="form-control"
+                                                            [(ngModel)]="user.ldryitem_description">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label class="btn btn-warning" style="width: 100%">
+                                                        Choose Laundry Category
+                                                        <input type="file" style="display: none" name="categoryimage"
+                                                            (change)="ActiveListenerlaundry($event)" />
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <div class="row">
+                                                <div class="col-md-4"></div>
+                                                <div class="col-md-4">
+                                                    <button class="btn btn-info" style="width: 100%"
+                                                        (click)="insertlaunadryitem(user,laundarycat,landy)">
                                                         Submit
                                                     </button>
                                                 </div>
+                                                <div class="col-md-4"></div>
                                             </div>
                                             <br>
                                         </form>
                                     </div>
                                     <div id="profdetail4" class="container tab-pane  testborder">
-                                        <div class="table-responsive">
-                                            <table class="table">
-                                                <thead class=" text-primary">
+                                        <br>
+                                        <div class="table-responsive tableFixHead">
+                                            <table class="table table-bordered table-hover table-striped">
+                                                <thead class=" table-primary">
                                                     <th>
-                                                        454
+                                                        SI.NO
                                                     </th>
                                                     <th>
-                                                        Name
+                                                        Item Name
                                                     </th>
                                                     <th>
-                                                        Country
+                                                        Laundary Category
                                                     </th>
                                                     <th>
-                                                        City
+                                                        Price
                                                     </th>
                                                     <th>
-                                                        Salary
+                                                        Description
+                                                    </th>
+                                                    <th>
+                                                        Edit
                                                     </th>
                                                 </thead>
                                                 <tbody>
-                                                    <tr>
+                                                    <tr *ngFor="let item of landryitem;let i=index">
                                                         <td>
-                                                            1
+                                                            {{i+1}}
                                                         </td>
                                                         <td>
-                                                            Dakota Rice
+                                                            {{item.ldryitem_name}}
                                                         </td>
                                                         <td>
-                                                            Niger
+                                                            {{item.ldrycateg_name}}
                                                         </td>
                                                         <td>
-                                                            Oud-Turnhout
+                                                            {{item.price}}
                                                         </td>
-                                                        <td class="text-primary">
-                                                            $36,738
+                                                        <td>
+                                                            {{item.ldryitem_description}}
+                                                        </td>
+                                                        <td>
+                                                            <i class="fa fa-edit" data-toggle="modal"
+                                                                data-target="#myModal1"
+                                                                (click)="laundryselectedit(item)"></i>
                                                         </td>
                                                     </tr>
-                                                    <tr>
+                                                    <tr *ngIf="landryitem==0">
                                                         <td>
-                                                            2
-                                                        </td>
-                                                        <td>
-                                                            Minerva Hooper
-                                                        </td>
-                                                        <td>
-                                                            Curaçao
-                                                        </td>
-                                                        <td>
-                                                            Sinaai-Waas
-                                                        </td>
-                                                        <td class="text-primary">
-                                                            $23,789
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            3
-                                                        </td>
-                                                        <td>
-                                                            Sage Rodriguez
-                                                        </td>
-                                                        <td>
-                                                            Netherlands
-                                                        </td>
-                                                        <td>
-                                                            Baileux
-                                                        </td>
-                                                        <td class="text-primary">
-                                                            $56,142
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            4
-                                                        </td>
-                                                        <td>
-                                                            Philip Chaney
-                                                        </td>
-                                                        <td>
-                                                            Korea, South
-                                                        </td>
-                                                        <td>
-                                                            Overland Park
-                                                        </td>
-                                                        <td class="text-primary">
-                                                            $38,735
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            5
-                                                        </td>
-                                                        <td>
-                                                            Doris Greene
-                                                        </td>
-                                                        <td>
-                                                            Malawi
-                                                        </td>
-                                                        <td>
-                                                            Feldkirchen in Kärnten
-                                                        </td>
-                                                        <td class="text-primary">
-                                                            $63,542
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            6
-                                                        </td>
-                                                        <td>
-                                                            Mason Porter
-                                                        </td>
-                                                        <td>
-                                                            Chile
-                                                        </td>
-                                                        <td>
-                                                            Gloucester
-                                                        </td>
-                                                        <td class="text-primary">
-                                                            $78,615
+                                                            No Item Found
                                                         </td>
                                                     </tr>
                                                 </tbody>
                                             </table>
+                                        </div>
+                                    </div>
+
+                                    <!-- The Laundary Modal -->
+                                    <div class="modal fade" id="myModal1" data-backdrop="static" data-keyboard="false"
+                                        role="dialog">
+                                        <div class="modal-dialog modal-dialog-centered  modal-lg">
+                                            <div class="modal-content modalwidth">
+                                                <div class="card-header card-header-info">
+                                                    <button type="button" class="close"
+                                                        data-dismiss="modal">&times;</button>
+                                                    <h4 class="modal-title">Update Laundry</h4>
+                                                </div>
+                                                <form #landy="ngForm" style="padding: 30px 30px 10px 30px">
+                                                    <div class="row">
+                                                        <div class="col-md-4">
+                                                            <div class="form-group">
+                                                                <input type="text" placeholder="Enter Laundry Item"
+                                                                    name="landryitem" id="" class="form-control"
+                                                                    [(ngModel)]="laundary_edit.ldryitem_name">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class="form-group">
+                                                                <input type="text" placeholder="Enter Item Price"
+                                                                    name="laundaryprice" id="" class="form-control"
+                                                                    [(ngModel)]="laundary_edit.price">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <label class="btn btn-warning" style="width: 100%">
+                                                                Choose Item Image
+                                                                <input type="file" style="display: none"
+                                                                    name="itemimage"
+                                                                    (change)="ActiveListenerlaundryitem($event)" />
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <br>
+                                                    <div class="row">
+                                                        <div class="col-md-4">
+                                                            <div class="form-group">
+                                                                <div *ngIf="showhidedrop == true">
+                                                                    <select name="cat" class="form-control"
+                                                                        [(ngModel)]="laundary_edit.ldrycateg_id">
+                                                                        <option [ngValue]="undefined" disabled selected>
+                                                                            ---
+                                                                            Select Category ---</option>
+                                                                        <option *ngFor="let item of laundary_array"
+                                                                            [ngValue]="item.laundry_items[0].ldrycateg_id">
+                                                                            {{item.laundry_items[0].ldrycateg_name}}
+                                                                        </option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class="form-group">
+                                                                <input type="text" placeholder="Enter Description"
+                                                                    name="name" id="" class="form-control"
+                                                                    [(ngModel)]="laundary_edit.ldryitem_description">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <label class="btn btn-warning" style="width: 100%">
+                                                                Choose Laundry Category
+                                                                <input type="file" style="display: none"
+                                                                    name="categoryimage"
+                                                                    (change)="ActiveListenerlaundry($event)" />
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <br>
+                                                    <div class="row" style=" display: flex;justify-content: center;">
+                                                        <button class="btn btn-info"
+                                                            (click)="launadryedit(laundary_edit,landy)"
+                                                            data-dismiss="modal">
+                                                            Submit
+                                                        </button>
+                                                    </div>
+                                                    <br>
+                                                </form>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

@@ -40,7 +40,33 @@
     box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(156, 39, 176, 0.4);
     background-color: #fafafa;
 }
+select.form-control:not([size]):not([multiple]) {
+     height: calc(2.2375rem + 1px); 
+}
 
 input[type=file]{
     border: none;
+}
+
+
+
+
+.tableFixHead {
+  overflow: auto;
+  height: 370px;
+  top:10px;
+}
+
+.tableFixHead thead th {
+  position: sticky;
+  top: 0;
+}
+
+.modalwidth{
+    width:900px;
+}
+
+.itemmovecenter{
+ display: flex;
+ justify-content: center;
 }

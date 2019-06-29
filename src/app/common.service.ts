@@ -189,6 +189,84 @@ select_food_category(param):  Observable<object[]> {
     //.catch(this.handleErrorObservable);
 }
 
+
+// insert roomconfig
+inroom(param):  Observable<object[]> {
+       
+  const headers = new Headers({'Content-Type':'application/json'})
+  const options = new RequestOptions({ headers: headers });
+ return this.http.post('https://mos-android.herokuapp.com/Insert_Hotel_room',param,options)
+    .map(this.extractData)
+    //.catch(this.handleErrorObservable);
+}
+//select roomcon
+select_room(param):  Observable<object[]> {
+       
+  const headers = new Headers({'Content-Type':'application/json'})
+  const options = new RequestOptions({ headers: headers });
+ return this.http.post('https://mos-android.herokuapp.com/Select_Hotel_Room',param,options)
+    .map(this.extractData)
+    //.catch(this.handleErrorObservable);
+}
+
+
+// insert room type config
+inrmty(param):  Observable<object[]> {
+       
+  const headers = new Headers({'Content-Type':'application/json'})
+  const options = new RequestOptions({ headers: headers });
+ return this.http.post('https://mos-android.herokuapp.com/Insert_Roomtype',param,options)
+    .map(this.extractData)
+    //.catch(this.handleErrorObservable);
+}
+
+//select room type
+select_rmtype(param):  Observable<object[]> {
+       
+  const headers = new Headers({'Content-Type':'application/json'})
+  const options = new RequestOptions({ headers: headers });
+ return this.http.post('https://mos-android.herokuapp.com/Select_Room_Type',param,options)
+    .map(this.extractData)
+    //.catch(this.handleErrorObservable);
+}
+// insert room type config
+insertlaundry(param):  Observable<object[]> {
+       
+  const headers = new Headers({'Content-Type':'application/json'})
+  const options = new RequestOptions({ headers: headers });
+ return this.http.post('https://mos-android.herokuapp.com/Configure_Laundry_Items',param,options)
+    .map(this.extractData)
+    //.catch(this.handleErrorObservable);
+}
+//select laundarycon
+select_laundary(param):  Observable<object[]> {
+       
+  const headers = new Headers({'Content-Type':'application/json'})
+  const options = new RequestOptions({ headers: headers });
+ return this.http.post('https://mos-android.herokuapp.com/Select_Laundry_Items',param,options)
+    .map(this.extractData)
+    //.catch(this.handleErrorObservable);
+}
+
+
+select_food_iteam(param):  Observable<object[]> {
+       
+  const headers = new Headers({'Content-Type':'application/json'})
+  const options = new RequestOptions({ headers: headers });
+ return this.http.post('https://mos-android.herokuapp.com/Select_Foodandbeverage_Items',param,options)
+    .map(this.extractData)
+    //.catch(this.handleErrorObservable);
+}
+
+update_food_category(param):  Observable<object[]> {
+       
+  const headers = new Headers({'Content-Type':'application/json'})
+  const options = new RequestOptions({ headers: headers });
+ return this.http.post('https://mos-android.herokuapp.com/Update_Foodandbeverage_Items',param,options)
+    .map(this.extractData)
+    //.catch(this.handleErrorObservable);
+}
+
   private extractData(res: Response) {
     //alert('hai20')
     console.log('res========---===='+res);
